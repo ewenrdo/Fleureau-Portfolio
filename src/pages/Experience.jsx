@@ -44,6 +44,16 @@ class Experience extends React.Component {
 
                                 <div className="timeline ps-lg-5">
                                     <div className="timeline-item">
+                                        <img src={process.env.PUBLIC_URL + "/images/figaro.png"} alt="Figaro" className="timeline-image" />
+                                        <div className="timeline-content">
+                                            <h3>Stagiaire au Figaro</h3>
+                                            <span className="date">Octobre 2025 - Aujourd'hui</span>
+                                            <p>
+                                                <i>Pas encore rédigé</i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="timeline-item">
                                         <img src={process.env.PUBLIC_URL + "/images/iscom.jpeg"} alt="Les petits doudous" className="timeline-image" />
                                         <div className="timeline-content">
                                             <h3>Assistante communication commerciale</h3>
@@ -62,7 +72,7 @@ class Experience extends React.Component {
                                     <div className="timeline-item">
                                         <img src={process.env.PUBLIC_URL + "/images/iscom.jpeg"} alt="Les petits doudous" className="timeline-image" />
                                         <div className="timeline-content">
-                                            <h3>Stagière au service communication ISCOM</h3>
+                                            <h3>Stagiaire au service communication ISCOM</h3>
                                             <span className="date">Janvier 2025 - Mars 2025</span>
                                             <p>
                                                 J'ai pu co-organiser des moments de promotion de l'école, notamment lors de journées et soirées portes ouvertes, le tout en travail d'équipe. En plus, j'ai eu l'occasion de faire de la prospection auprès de profils intéressés par l'école.
