@@ -44,16 +44,6 @@ class Experience extends React.Component {
 
                                 <div className="timeline ps-lg-5">
                                     <div className="timeline-item">
-                                        <img src={process.env.PUBLIC_URL + "/images/figaro.png"} alt="Figaro" className="timeline-image" />
-                                        <div className="timeline-content">
-                                            <h3>Stagiaire au Figaro</h3>
-                                            <span className="date">Octobre 2025 - Aujourd'hui</span>
-                                            <p>
-                                                <i>Pas encore rédigé</i>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="timeline-item">
                                         <img src={process.env.PUBLIC_URL + "/images/iscom.jpeg"} alt="Les petits doudous" className="timeline-image" />
                                         <div className="timeline-content">
                                             <h3>Assistante communication commerciale</h3>
@@ -66,6 +56,24 @@ class Experience extends React.Component {
                                                 - Préparation et organisation d'événements,<br />
                                                 - Aménagement et rangements des espaces de travails,<br />
                                                 - Assistance à mes supérieurs dans la coordination des pré-événements.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="timeline-item">
+                                        <img src={process.env.PUBLIC_URL + "/images/figaro.png"} alt="Figaro" className="timeline-image" />
+                                        <div className="timeline-content">
+                                            <h3>Stagiaire chez Media Figaro</h3>
+                                            <span className="date">Octobre 2025 - Février 2026</span>
+                                            <p>
+                                                Durant mon stage en tant que chargée de communication marketing chez Media Figaro j'ai eu l'occasion d'expérimenter de nombreuses missions :<br/><br/>
+                                                - Assistance dans la conception de différents évènements (Bicentenaire du Figaro, évènement interne)<br/>
+                                                - Mise en place d'un plan de communication<br/>
+                                                - Mise à jour et analyse quotidienne des outils de suivi (audience, CA)<br/>
+                                                - Veille médiatique quotidienne pour renforcer la pertinence des contenus éditoriaux<br/>
+                                                - Conception des supports de communication avec le graphiste<br/>
+                                                - Conception de partenariats avec des marques<br/><br/>
+
+                                                J'ai également eu l'opportunité de suivre une formation interne dédiée au marketing média : compréhension des audiences, affinités lectorat, reach et enjeux presse.
                                             </p>
                                         </div>
                                     </div>
