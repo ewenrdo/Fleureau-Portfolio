@@ -25,8 +25,6 @@ class Home extends Component {
     render() {
         const { cursorPos, isHovered } = this.state;
 
-        // Style dynamique pour l'effet de loupe au survol
-        // Dans Home.jsx, remplace la constante maskStyle par ceci :
         const maskStyle = isHovered ? {
             maskImage: `radial-gradient(circle 90px at ${cursorPos.x}px ${cursorPos.y}px, black 100%, transparent 100%)`,
             WebkitMaskImage: `radial-gradient(circle 90px at ${cursorPos.x}px ${cursorPos.y}px, black 100%, transparent 100%)`
