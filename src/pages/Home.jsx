@@ -1,73 +1,86 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import NavBar from '../assets/components/NavBar';
 
-class Home extends React.Component {
+class Home extends Component {
+    state = {
+        cursorPos: { x: 0, y: 0 },
+        isHovered: false
+    };
 
     componentDidMount() {
-        document.title = "Margaux Fleureau - Etudiante et ambassadrice de l'ISCOM Paris";
+        document.title = "Margaux Fleureau - Étudiante et ambassadrice de l'ISCOM Paris";
     }
+
+    handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        this.setState({
+            cursorPos: {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top
+            }
+        });
+    };
 
     render() {
+        const { cursorPos, isHovered } = this.state;
+
+        // Style dynamique pour l'effet de loupe au survol
+        // Dans Home.jsx, remplace la constante maskStyle par ceci :
+        const maskStyle = isHovered ? {
+            maskImage: `radial-gradient(circle 90px at ${cursorPos.x}px ${cursorPos.y}px, black 100%, transparent 100%)`,
+            WebkitMaskImage: `radial-gradient(circle 90px at ${cursorPos.x}px ${cursorPos.y}px, black 100%, transparent 100%)`
+        } : {
+            opacity: 0,
+            transition: 'opacity 0.2s ease'
+        };
+
         return (
-            <div className="Home">
-                <section className="Header">
-                    <NavBar home background="bg-white" />
+            <div className="home-container">
+                {/* Navigation */}
+                <NavBar />
 
-                    <div className="hero">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-xs-12 col-lg-5 col-xxl-4">
-                                    <div className="avatar">
-                                        <img src={process.env.PUBLIC_URL + "/images/margaux.jpeg"} alt="Margaux Fleureau" className="profile-picture" />
-                                        <img src={process.env.PUBLIC_URL + "/images/margaux.jpeg"} alt="Margaux Fleureau" className="profile-picture-hover" />
-                                    </div>
-                                    <h1>{new Date().getHours() < 18 ? "Bonjour" : "Bonsoir"}, je suis Margaux Fleureau <div className="tooltipHint">👋<span className="tooltiptext"> Enchantée ! </span></div></h1>
+                {/* Section Hero */}
+                <main className="hero-section">
+                    <h1 className="hero-title">
+                        <span className="outline">MARGAUX</span> FLEUREAU
+                    </h1>
 
+                    {/* Wrapper photo avec effet de survol */}
+                    <div
+                        className="portrait-wrapper"
+                        onMouseMove={this.handleMouseMove}
+                        onMouseEnter={() => this.setState({ isHovered: true })}
+                        onMouseLeave={() => this.setState({ isHovered: false })}
+                    >
+                        {/* Image de base en Noir & Blanc */}
+                        <img src="margaux.png" alt="Photo de Margaux Fleureau en noir et blanc" className="portrait portrait-bw" />
 
-                                    <div className="diplomas d-lg-flex d-none">
+                        <img
+                            src="margaux.png"
+                            alt="Photo de Margaux Fleureau en couleur"
+                            className="portrait portrait-color"
+                            style={maskStyle}
+                        />
+                    </div>
 
-                                        <div className="diploma-badge">
-                                            <div className="tooltiptext">Programme Grande Ecole</div>
-                                            <div className="content">
-                                                <img src={process.env.PUBLIC_URL + "/images/iscom.jpeg"} alt="Logo de l'ISCOM" />
-                                                ISCOM, Bachelor en communication <i className="far fa-hourglass iconTooltip" />
-                                            </div>
-                                        </div>
-                                        <div className="diploma-badge">
-                                            <div className="tooltiptext">Mention Assez Bien</div>
-                                            <div className="content">
-                                                <img src={process.env.PUBLIC_URL + "/images/monod.jpeg"} alt="Baccalauréat" />
-                                                Baccaulauréat
-                                            </div>
-                                        </div>
+                    {/* Footer / Info bas de page */}
+                    <div className="hero-footer">
+                        <div className="bio">
+                            <h2>Étudiant en communication</h2>
+                            <p>Étudiante et ambassadrice de l'ISCOM Paris, passionnée par la communication et le cinéma.</p>
+                            <button className="btn-black">Discutons ↗</button>
+                        </div>
 
-                                    </div>
-
-                                </div>
-
-                                <div className="col-xs-12 col-lg-7 col-xxl-8 ps-lg-5">
-                                    <div className="presentation">
-                                        <h2>Etudiante et ambassadrice de l'ISCOM</h2>
-                                        <span className="description">Passionnée de communication, je suis actuellement étudiante et ambassadrice à l'ISCOM Paris au programme Grande Ecole.</span>
-
-                                        <div className="cta-section">
-                                            <NavLink className="btn btn-black mb-2" to="/contact">Me contacter</NavLink>
-                                            <NavLink className="btn btn-outline-black" to="/experience">Découvrir mon expérience</NavLink>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
+                        <div className="socials">
+                            <Link to="https://www.linkedin.com/in/margaux-fleureau-480855267/" className="social-pill" target="_blank">LinkedIn</Link>
+                            <a href="/cv-margaux-fleureau.pdf" download className="social-pill">Mon CV</a>
                         </div>
                     </div>
-                </section>
+                </main>
             </div>
         );
-
     }
-
 }
 
 export default Home;
