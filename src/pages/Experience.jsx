@@ -75,6 +75,12 @@ export const DIPLOMAS = [
         "year": "En cours"
     },
     {
+        "name": "Permis B",
+        "degree": "Permis de conduire",
+        "cursus": "",
+        "year": "2026"
+    },
+    {
         "name": "TOEIC",
         "degree": "Test of English for International Communication",
         "cursus": "",
