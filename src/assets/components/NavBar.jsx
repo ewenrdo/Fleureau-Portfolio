@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { EXPERIENCE } from '../../pages/Experience';
 
 class NavBar extends React.Component {

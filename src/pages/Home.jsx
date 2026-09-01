@@ -52,11 +52,11 @@ class Home extends Component {
                         onMouseLeave={() => this.setState({ isHovered: false })}
                     >
                         {/* Image de base en Noir & Blanc */}
-                        <img src="margaux.png" alt="Photo de Margaux Fleureau en noir et blanc" className="portrait portrait-bw" />
+                        <img src="margaux.png" alt="Margaux Fleureau en noir et blanc" className="portrait portrait-bw" />
 
                         <img
                             src="margaux.png"
-                            alt="Photo de Margaux Fleureau en couleur"
+                            alt="Margaux Fleureau en couleur"
                             className="portrait portrait-color"
                             style={maskStyle}
                         />
