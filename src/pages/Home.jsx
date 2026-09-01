@@ -65,7 +65,7 @@ class Home extends Component {
                     {/* Footer / Info bas de page */}
                     <div className="hero-footer">
                         <div className="bio">
-                            <h2>Étudiant en communication</h2>
+                            <h2>Étudiante en communication</h2>
                             <p>Étudiante et ambassadrice de l'ISCOM Paris, passionnée par la communication et le cinéma.</p>
                             <button className="btn-black">Discutons ↗</button>
                         </div>

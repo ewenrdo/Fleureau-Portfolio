@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { EXPERIENCE } from '../../pages/Experience';
 
 class NavBar extends React.Component {
     render() {
@@ -10,8 +11,8 @@ class NavBar extends React.Component {
                         <span className="dot"></span> À votre service
                     </div>
                     <nav className="nav-links">
-                        <Link to="/experience">Expérience <span>[8]</span></Link>
-                        <Link to="/projects">Projets <span>[4y+]</span></Link>
+                        <Link to="/experience">Expérience <span>[{EXPERIENCE.length}]</span></Link>
+                        <Link to="/projects">Projets <span>[4+]</span></Link>
                         <Link to="/contact">Contact</Link>
                     </nav>
                     <button className="btn-black">Prenons contact ↗</button>

@@ -1,298 +1,451 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&family=Inter:wght@400;500;600&display=swap');
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #ffffff;
-  color: #0f0f0f;
-  overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    color: #0f0f0f;
+    overflow-x: hidden;
+
+    background-color: #ffffff;
+    /* Un blanc légèrement cassé très doux */
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E"),
+        linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+
+    /* Taille du motif : le grain s'adapte, la grille fait 50px par 50px */
+    background-size: auto, 50px 50px, 50px 50px;
 }
 
 .home-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px 40px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navbar */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
 }
 
 .badge {
-  background: #f4f4f4;
-  color: #0f0f0f;
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    background: #f4f4f4;
+    color: #0f0f0f;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
-  background-color: #10b981;
-  border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
 }
 
 .nav-links {
-  display: flex;
-  gap: 30px;
+    display: flex;
+    gap: 30px;
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: #1a1a1a;
-  font-size: 14px;
-  font-weight: 500;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .nav-links span {
-  color: #888;
-  font-size: 12px;
+    color: #888;
+    font-size: 12px;
 }
 
 .btn-black {
-  background: #0f0f0f;
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
+    background: #0f0f0f;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 /* Section Hero */
 /* 1. Assure que la section hero sert de repère absolu et touche le bas */
 .hero-section {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4rem;
-  flex-grow: 1;
-  padding-bottom: 0; /* Supprime le rembourrage bas */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    flex-grow: 1;
+    padding-bottom: 0;
+    /* Supprime le rembourrage bas */
 }
 
 
 /* Titre ajusté à "MARGAUX FLEUREAU" */
 .hero-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 800;
-  /* Taille ajustée spécifiquement pour la longueur de ton nom */
-  font-size: clamp(2.5rem, 6.8vw, 7.5rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  text-align: center;
-  white-space: nowrap;
-  width: 100%;
-  user-select: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    /* Taille ajustée spécifiquement pour la longueur de ton nom */
+    font-size: clamp(2.5rem, 6.8vw, 7.5rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+    user-select: none;
 }
 
 .hero-title .outline {
-  color: transparent;
-  -webkit-text-stroke: 1.5px #0f0f0f;
-  margin-right: 0.25em; /* Espace propre entre MARGAUX et FLEUREAU */
+    color: transparent;
+    -webkit-text-stroke: 1.5px #0f0f0f;
+    margin-right: 0.25em;
+    /* Espace propre entre MARGAUX et FLEUREAU */
 }
 
 /* Portrait superposé */
 
 /* 2. Positionne et agrandit l'image collée en bas */
 .portrait-wrapper {
-  position: absolute;
-  bottom: 0; /* Colle le bas de l'image exactement en bas du conteneur */
-  top: auto; /* Annule le top précédent */
-  width: 650px; /* Taille augmentée pour respecter les proportions du modèle */
-  height: auto;
-  aspect-ratio: 4 / 5; /* Conserve le ratio */
-  z-index: 10;
-  user-select: none;
-  -webkit-user-select: none;
+    position: absolute;
+    bottom: 0;
+    /* Colle le bas de l'image exactement en bas du conteneur */
+    top: auto;
+    /* Annule le top précédent */
+    width: 650px;
+    /* Taille augmentée pour respecter les proportions du modèle */
+    height: auto;
+    aspect-ratio: 4 / 5;
+    /* Conserve le ratio */
+    z-index: 10;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 /* 3. Ajustement de l'alignement de l'image interne */
 .portrait {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: bottom center; /* Force l'ancrage vers le bas */
-  pointer-events: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-user-drag: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+    /* Force l'ancrage vers le bas */
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
+
 .portrait-bw {
-  filter: grayscale(100%) contrast(1.05);
+    filter: grayscale(100%) contrast(1.05);
 }
 
 .portrait-color {
-  filter: grayscale(0%);
+    filter: grayscale(0%);
 }
 
 /* Footer de page */
 .hero-footer {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-top: auto;
-  padding-bottom: 30px;
-  z-index: 5;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+    padding-bottom: 30px;
+    z-index: 5;
 }
 
 .bio {
-  max-width: 360px;
+    max-width: 360px;
 }
 
 .bio h2 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .bio p {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
 .socials {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
 }
 
 .social-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid #e5e5e5;
-  padding: 8px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  color: #0f0f0f;
-  font-size: 13px;
-  font-weight: 500;
-  transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #e5e5e5;
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #0f0f0f;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .social-pill:hover {
-  background: #f4f4f4;
-  border-color: #ccc;
+    background: #f4f4f4;
+    border-color: #ccc;
 }
 
 /* --- REGLES GLOBALES RESPONSIVE --- */
 
 /* 1. Ajustement de l'image et du wrapper pour l'empêcher de déborder sur mobile */
 .portrait-wrapper {
-  max-width: 100%; /* S'assure de ne pas dépasser l'écran sur mobile */
-  pointer-events: auto; /* Maintient la détection du survol */
+    max-width: 100%;
+    /* S'assure de ne pas dépasser l'écran sur mobile */
+    pointer-events: auto;
+    /* Maintient la détection du survol */
 }
 
 /* 2. Désactivation du curseur custom/loupe sur les écrans tactiles */
 @media (hover: none) and (pointer: coarse) {
-  .portrait-wrapper {
-    cursor: default;
-  }
+    .portrait-wrapper {
+        cursor: default;
+    }
 }
 
 /* --- TABLETTES ET PETITS ECRANS (<= 1024px) --- */
 @media screen and (max-width: 1024px) {
-  .home-container {
-    padding: 20px;
-  }
+    .home-container {
+        padding: 20px;
+    }
 
-  .hero-section {
-    margin-top: 2rem;
-  }
+    .hero-section {
+        margin-top: 2rem;
+    }
 
-  .portrait-wrapper {
-    width: 450px; /* Redimensionnement intermédiaire */
-  }
+    .portrait-wrapper {
+        width: 450px;
+        /* Redimensionnement intermédiaire */
+    }
 
-  .hero-footer {
-    padding-bottom: 20px;
-  }
+    .hero-footer {
+        padding-bottom: 20px;
+    }
 }
 
 /* --- MOBILES (<= 768px) --- */
 @media screen and (max-width: 768px) {
-  /* Header : passage en colonne ou empilement propre */
-  .navbar {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
 
-  .nav-links {
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    /* Header : passage en colonne ou empilement propre */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
 
-  .navbar .btn-black {
-    display: none; /* Masque le bouton doublon du header sur mobile pour espacer */
-  }
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-  /* Titre : autorise le passage sur deux lignes si nécessaire et réduit la taille */
-  .hero-title {
-    font-size: clamp(2.2rem, 11vw, 4rem);
-    white-space: normal;
-    line-height: 1.1;
-  }
+    .navbar .btn-black {
+        display: none;
+        /* Masque le bouton doublon du header sur mobile pour espacer */
+    }
 
-  .hero-title .outline {
-    display: block; /* Passe MARGAUX au-dessus de FLEUREAU sur très petit écran */
-    margin-right: 0;
-  }
+    /* Titre : autorise le passage sur deux lignes si nécessaire et réduit la taille */
+    .hero-title {
+        font-size: clamp(2.2rem, 11vw, 4rem);
+        white-space: normal;
+        line-height: 1.1;
+    }
 
-  /* Portrait : ajustement de la taille et du z-index */
-  .portrait-wrapper {
-    width: 320px;
-    opacity: 0.9; /* Subtile transparence si le texte passe derrière */
-  }
+    .hero-title .outline {
+        display: block;
+        /* Passe MARGAUX au-dessus de FLEUREAU sur très petit écran */
+        margin-right: 0;
+    }
 
-  /* Footer : passage en une seule colonne centrée */
-  .hero-footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 25px;
-    margin-top: 40px;
-  }
+    /* Portrait : ajustement de la taille et du z-index */
+    .portrait-wrapper {
+        width: 320px;
+        opacity: 0.9;
+        /* Subtile transparence si le texte passe derrière */
+    }
 
-  .bio {
-    max-width: 100%;
-  }
+    /* Footer : passage en une seule colonne centrée */
+    .hero-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+        margin-top: 40px;
+    }
 
-  .bio p {
-    margin-bottom: 15px;
-  }
+    .bio {
+        max-width: 100%;
+    }
 
-  .socials {
-    align-items: center;
-    flex-direction: row; /* Aligne les boutons réseaux côte à côte sur mobile */
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+    .bio p {
+        margin-bottom: 15px;
+    }
+
+    .socials {
+        align-items: center;
+        flex-direction: row;
+        /* Aligne les boutons réseaux côte à côte sur mobile */
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* Conteneur principal conservé en blanc */
+.experience-container {
+    background-color: #ffffff;
+    color: #0f0f0f;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px 100px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+
+    /* Alignement du titre hero / page-title */
+    .hero-section {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-section.spacing-top {
+        margin-top: 5rem;
+    }
+
+    .page-title {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 800;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    .page-title .outline {
+        color: transparent;
+        -webkit-text-stroke: 1.5px #0f0f0f;
+        margin-right: 0.25em;
+    }
+
+    /* Liste Inline */
+    .list-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .list-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 24px 2rem;
+        border-bottom: 1px solid #e5e5e5;
+        /* Bordure sombre fine sur fond clair */
+        transition: background-color 0.2s ease;
+    }
+
+    .list-row:first-child {
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .list-row:hover {
+        background-color: #f9f9f9;
+    }
+
+    /* Partie Gauche : Entreprise + Poste + Description */
+    .row-left {
+        max-width: 70%;
+    }
+
+    .row-company {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #0f0f0f;
+        margin: 0 0 4px 0;
+    }
+
+    .row-role {
+        font-size: 0.95rem;
+        color: #555555;
+        margin: 0 0 8px 0;
+        font-weight: 500;
+    }
+
+    .row-description {
+        font-size: 0.88rem;
+        color: #777777;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    /* Partie Droite : Date */
+    .row-right {
+        text-align: right;
+        white-space: nowrap;
+        padding-left: 20px;
+    }
+
+    .row-date {
+        font-size: 0.9rem;
+        color: #888888;
+        font-weight: 500;
+    }
+
+    /* Mobile responsive */
+    @media screen and (max-width: 768px) {
+        .experience-container {
+            padding: 20px;
+        }
+
+        .list-row {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .row-left {
+            max-width: 100%;
+        }
+
+        .row-right {
+            text-align: left;
+            padding-left: 0;
+        }
+    }
 }

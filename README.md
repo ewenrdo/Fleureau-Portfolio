@@ -16,6 +16,10 @@ Pour lancer le projet, il vous suffit de lancer la commande suivante :
 npm start
 ```
 
+# Création de l'image 
+
+Voir sur [wipe.bg](https://www.wipe.bg/) pour créer l'image sous forme de _sticker_.
+
 # Auteur
 
 Ce projet a été réalisé par Ewen Rodrigues de Oliveira. Toute reproduction publiée ou non est interdite sans mon accord.

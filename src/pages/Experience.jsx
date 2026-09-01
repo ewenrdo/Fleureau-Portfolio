@@ -1,174 +1,146 @@
 import React from 'react';
 import NavBar from '../assets/components/NavBar';
 
+export const EXPERIENCE = [
+    {
+        "label": "Intitulé à venir",
+        "compagny": "Open2Europe",
+        "from": "Sept. 2026",
+        "to": "Aujourd'hui",
+        "description": "Description à venir."
+    },
+    {
+        "label": "Assistante communication commerciale",
+        "compagny": "ISCOM Paris",
+        "from": "Mars 2025",
+        "to": "Août 2026",
+        "description": "Prospection et création de relations, organisation d'événements, aménagement des espaces et coordination."
+    },
+    {
+        "label": "Stagiaire chargée de communication marketing",
+        "compagny": "Media Figaro",
+        "from": "Oct. 2025",
+        "to": "Fév. 2026",
+        "description": "Conception d'événements (Bicentenaire), plan de communication, analyse d'audience/CA et supports de communication."
+    },
+    {
+        "label": "Stagiaire au service communication",
+        "compagny": "ISCOM Paris",
+        "from": "Janv. 2025",
+        "to": "Mars 2025",
+        "description": "Co-organisation de journées portes ouvertes et prospection de futurs étudiants."
+    },
+    {
+        "label": "Chargée de communication bénévole",
+        "compagny": "Les Petits Doudous",
+        "from": "Nov. 2024",
+        "to": "Aujourd'hui",
+        "description": "Gestion de la communication en ligne et réalisation d'affiches pour l'hôpital Simone Veil."
+    },
+    {
+        "label": "Bénévole",
+        "compagny": "Unissons les Coeurs",
+        "from": "Nov. 2023",
+        "to": "Déc. 2024",
+        "description": "Actions de soutien et animations auprès d'adolescents hospitalisés."
+    },
+    {
+        "label": "Parlement Européen des Lycéens",
+        "compagny": "PEL",
+        "from": "Mai 2024",
+        "to": "Mai 2024",
+        "description": "Simulation d'une session plénière et débats sur des thématiques européennes."
+    },
+    {
+        "label": "Déléguée à la vie associative",
+        "compagny": "CSN",
+        "from": "Fév. 2023",
+        "to": "Août 2024",
+        "description": "Organisation et communication autour de projets solidaires."
+    },
+    {
+        "label": "Responsable événementiel",
+        "compagny": "MDL Lycée Gustave Monod",
+        "from": "Nov. 2022",
+        "to": "Août 2024",
+        "description": "Pilotage des projets et événements de la Maison des Lycéens."
+    }
+];
+
+export const DIPLOMAS = [
+    {
+        "name": "ISCOM Paris",
+        "degree": "Bachelor en communication",
+        "cursus": "Programme Grande École",
+        "year": "En cours"
+    },
+    {
+        "name": "TOEIC",
+        "degree": "Test of English for International Communication",
+        "cursus": "",
+        "year": "2025-2027"
+    },
+    {
+        "name": "Lycée Gustave Monod",
+        "degree": "Baccalauréat Général",
+        "cursus": "Mention Assez Bien",
+        "year": "2024"
+    }
+];
+
 class Experience extends React.Component {
 
     componentDidMount() {
-        document.title = "Mon expérience - Margaux Fleureau";
+        document.title = "Mes expériences - Margaux Fleureau";
     }
 
     render() {
         return (
-            <>
-                <section className="Header">
-                    <NavBar background="bg-background" />
-                </section>
-                <div className="container">
+            <div className="experience-container">
+                {/* Navigation */}
+                <NavBar />
 
-                    <section className="experience mt-lg-5" ref={this.expRef}>
+                {/* Section Hero EXPÉRIENCE */}
+                <main className="hero-section">
+                    <h1 className="page-title"><span className="outline">/</span>EXPERIENCE</h1>
+                </main>
 
-                        <div className="row">
-                            <div className="col-xs-12 col-lg-5 col-xxl-4 d-none d-lg-block">
-                                <div className="diplomas d-lg-flex d-none mt-5 mb-5">
-
-                                    <div className="diploma-badge">
-                                        <div className="tooltiptext">Programme Grande Ecole</div>
-                                        <div className="content">
-                                            <img src={process.env.PUBLIC_URL + "/images/iscom.jpeg"} alt="Logo de l'ISCOM" />
-                                            ISCOM, Bachelor en communication <i className="far fa-hourglass iconTooltip" />
-                                        </div>
-                                    </div>
-                                    <div className="diploma-badge">
-                                        <div className="tooltiptext">Mention Assez Bien</div>
-                                        <div className="content">
-                                            <img src={process.env.PUBLIC_URL + "/images/monod.jpeg"} alt="Baccalauréat" />
-                                            Baccaulauréat
-                                        </div>
-                                    </div>
-
-                                </div>
-
+                <section className="list-container">
+                    {EXPERIENCE.map((exp, index) => (
+                        <div key={index} className="list-row">
+                            <div className="row-left">
+                                <h2 className="row-company">{exp.compagny}</h2>
+                                <p className="row-role">{exp.label}</p>
+                                <p className="row-description">{exp.description}</p>
                             </div>
-                            <div className="col-xs-12 col-lg-5 ml5">
-                                <h2 className="ps-lg-5">Mon parcours</h2>
-
-                                <div className="timeline ps-lg-5">
-                                    <div className="timeline-item">
-                                        <img src={process.env.PUBLIC_URL + "/images/iscom.jpeg"} alt="Les petits doudous" className="timeline-image" />
-                                        <div className="timeline-content">
-                                            <h3>Assistante communication commerciale</h3>
-                                            <span className="date">Mars 2025 - Aujourd'hui</span>
-                                            <p>
-                                                À la suite de mon stage, j'ai l'honneur de poursuivre mes activités mais en tant qu'intérimaires. <br />
-                                                J'ai donc les mêmes missions que pendant mon stage :<br /><br />
-
-                                                - Prospection et création de relations,<br />
-                                                - Préparation et organisation d'événements,<br />
-                                                - Aménagement et rangements des espaces de travails,<br />
-                                                - Assistance à mes supérieurs dans la coordination des pré-événements.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="timeline-item">
-                                        <img src={process.env.PUBLIC_URL + "/images/figaro.png"} alt="Figaro" className="timeline-image" />
-                                        <div className="timeline-content">
-                                            <h3>Stagiaire chez Media Figaro</h3>
-                                            <span className="date">Octobre 2025 - Février 2026</span>
-                                            <p>
-                                                Durant mon stage en tant que chargée de communication marketing chez Media Figaro j'ai eu l'occasion d'expérimenter de nombreuses missions :<br/><br/>
-                                                - Assistance dans la conception de différents évènements (Bicentenaire du Figaro, évènement interne)<br/>
-                                                - Mise en place d'un plan de communication<br/>
-                                                - Mise à jour et analyse quotidienne des outils de suivi (audience, CA)<br/>
-                                                - Veille médiatique quotidienne pour renforcer la pertinence des contenus éditoriaux<br/>
-                                                - Conception des supports de communication avec le graphiste<br/>
-                                                - Conception de partenariats avec des marques<br/><br/>
-
-                                                J'ai également eu l'opportunité de suivre une formation interne dédiée au marketing média : compréhension des audiences, affinités lectorat, reach et enjeux presse.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="timeline-item">
-                                        <img src={process.env.PUBLIC_URL + "/images/iscom.jpeg"} alt="Les petits doudous" className="timeline-image" />
-                                        <div className="timeline-content">
-                                            <h3>Stagiaire au service communication ISCOM</h3>
-                                            <span className="date">Janvier 2025 - Mars 2025</span>
-                                            <p>
-                                                J'ai pu co-organiser des moments de promotion de l'école, notamment lors de journées et soirées portes ouvertes, le tout en travail d'équipe. En plus, j'ai eu l'occasion de faire de la prospection auprès de profils intéressés par l'école.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="timeline-item">
-                                        <img src={process.env.PUBLIC_URL + "/images/lpd.webp"} alt="Les petits doudous" className="timeline-image" />
-                                        <div className="timeline-content">
-                                            <h3>Chargée de communication chez Les Petits Doudous</h3>
-                                            <span className="date">Novembre 2024 - Aujourd'hui</span>
-                                            <p>
-                                                Je participe comme bénévole à l'association Les Petits Doudous de l'Hopital Simone Veil d'Eaubonne en tant que chargée de communication : je m'occupe de la communication en ligne et de la réalisation d'affiches pour l'hopital.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="timeline-item">
-                                        <img src={process.env.PUBLIC_URL + "/images/ulc.jpeg"} alt="ULC" className="timeline-image" />
-                                        <div className="timeline-content">
-                                            <h3>Bénévole Unissons les Coeurs</h3>
-                                            <span className="date">Novembre 2023 - Décembre 2024</span>
-                                            <p>
-                                                Nous avons pu ensemble venir en aide aux adolescents hopsitalisés en leur donnant le sourire !
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="timeline-item">
-                                        <img src={process.env.PUBLIC_URL + "/images/lpe.jpg"} alt="PEL" className="timeline-image" />
-                                        <div className="timeline-content">
-                                            <h3>Parlement Européen des Lycéens</h3>
-                                            <span className="date">Mai 2024</span>
-                                            <p>
-                                                Nous avons simulé, en équipe, une session plénière du Parlement Européen et participé à des débats sur des sujets d'actualité européenne.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="timeline-item">
-                                        <img src={process.env.PUBLIC_URL + "/images/csn.jpeg"} alt="CSN" className="timeline-image" />
-                                        <div className="timeline-content">
-                                            <h3>Déléguée à la vie associative du CSN</h3>
-                                            <span className="date">Février 2023 - Août 2024</span>
-                                            <p>
-                                                J'ai pu participé à l'organisation de projets solidaires dans mon lycée et ait généré la communication de ceux-ci.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="timeline-item">
-                                        <img src={process.env.PUBLIC_URL + "/images/mdl.jpg"} alt="MDL" className="timeline-image" />
-                                        <div className="timeline-content">
-                                            <h3>Reponsable événementiel de la MDL</h3>
-                                            <span className="date">Novembre 2022 - Août 2024</span>
-                                            <p>
-                                                J'ai organisé de nombreux projets dans la maison des lycéens du Lycée Gustave Monod !
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xs-12 col-lg-5 col-xxl-4 d-flex d-lg-none ml5" style={{ maxWidth: "95%" }}>
-
-
-                                <div className="diplomas mb-5 mt-5">
-
-                                    <div className="diploma-badge">
-                                        <div className="tooltiptext">Programme Grande Ecole</div>
-                                        <div className="content">
-                                            <img src={process.env.PUBLIC_URL + "/images/iscom.jpeg"} alt="Logo de l'ISCOM" />
-                                            ISCOM, Bachelor en communication <i className="far fa-hourglass iconTooltip" />
-                                        </div>
-                                    </div>
-                                    <div className="diploma-badge">
-                                        <div className="tooltiptext">Mention Assez Bien</div>
-                                        <div className="content">
-                                            <img src={process.env.PUBLIC_URL + "/images/monod.jpeg"} alt="Baccalauréat" />
-                                            Baccaulauréat
-                                        </div>
-                                    </div>
-
-                                </div>
+                            <div className="row-right">
+                                <span className="row-date">{exp.from} — {exp.to || "Aujourd'hui"}</span>
                             </div>
                         </div>
-                    </section >
-                </div >
-            </>
+                    ))}
+                </section>
+
+                {/* Section Hero FORMATION */}
+                <main className="hero-section spacing-top">
+                    <h1 className="page-title"><span className="outline">/</span>FORMATION</h1>
+                </main>
+
+                <section className="list-container">
+                    {DIPLOMAS.map((diploma, index) => (
+                        <div key={index} className="list-row">
+                            <div className="row-left">
+                                <h2 className="row-company">{diploma.name}</h2>
+                                <p className="row-role">{diploma.degree} {diploma.cursus && `• ${diploma.cursus}`}</p>
+                            </div>
+                            <div className="row-right">
+                                <span className="row-date">{diploma.year}</span>
+                            </div>
+                        </div>
+                    ))}
+                </section>
+            </div>
         );
-
     }
-
 }
 
 export default Experience;
