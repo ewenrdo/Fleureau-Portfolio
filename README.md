@@ -25,6 +25,6 @@ Voir sur [wipe.bg](https://www.wipe.bg/) pour créer l'image sous forme de _stic
 Ce projet a été réalisé par Ewen Rodrigues de Oliveira. Toute reproduction publiée ou non est interdite sans mon accord.
 Je vous invite à me contacter pour toute demande d'utilisation de ce projet : contact@ewenrdo.fr.
 
-**L'ACCORD PAR MARGAUX FLEUREAU EST OBLIGATOIRE POUR TOUTE REPRODUCTION DE CE PROJET !**
+L'accord de Margaux Fleureau est également nécessaire pour toute utilisation de ce projet.
 
 2024 - 2026 (c) Tous droits réservés. Ewen Rodrigues de Oliveira.
