@@ -3,11 +3,11 @@ import NavBar from '../assets/components/NavBar';
 
 export const EXPERIENCE = [
     {
-        "label": "Intitulé à venir",
+        "label": "PR Consultant",
         "compagny": "Open2Europe",
         "from": "Sept. 2026",
         "to": "Aujourd'hui",
-        "description": "Description à venir."
+        "description": "Gestion et accompagnement des relations presse pour un portefeuille de 10 clients internationaux (France, Royaume-Uni, Suède).",
     },
     {
         "label": "Assistante communication commerciale",
